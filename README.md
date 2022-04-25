@@ -9,6 +9,7 @@ Files:
         It deploys a par of NAT Gateways (one in each Availability Zones), and default routes for them in the private subnets.
 
 Parameters:
+
     EnvironmentName: (Assignment-2-Enviroment)
         Description: An environment name that will be prefixed to resource names
         Type: String
@@ -40,6 +41,7 @@ Parameters:
         Description: AMI to use for our base image
         Type: String
 Security :
+
     Ingress:
         Ip Protocol: TCP
         From Port : 80
@@ -57,11 +59,14 @@ Security :
         To Port : 65535
         CidrIp: 0.0.0.0/0
 Network:
+
     Internet Gateway -> Elastic Load Balancer -> NAT Gateway with Elastic IP (Public Subnet) -> Backend Web Application -> SQL Server (Unimplemented)
 
 Web Application:
+
     Type : AWS Auto Scaling Group
 Listener:
+
     Elastic Load Balancing Listener
     
     
